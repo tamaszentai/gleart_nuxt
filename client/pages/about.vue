@@ -47,4 +47,5 @@ export default {
   font-size: 1rem;
   margin: auto;
 }
+
 </style>
