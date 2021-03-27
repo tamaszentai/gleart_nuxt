@@ -1,29 +1,26 @@
 <template>
   <div class="container">
     <div
-    v-for="n in data"
+    v-for="n in about"
     :key="n.id"
     class="wrapper">
     <div class="image-container">
-      <img :src="`http://localhost:1337${n.picture.url}`">
+      <img :src="require(`@/assets/${n.image}`)">
     </div>
     <div class="text-container">
-      {{n.biography}}
+      {{n.bio}}
     </div>
     </div>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
+import about from '@/assets/about.js'
 export default {
   data () {
     return {
-      data: null
+      about
     }
-  },
-  async fetch () {
-    this.data = await axios.get('http://localhost:1337/abouts').then(response => response.data)
   }
 }
 </script>

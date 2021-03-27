@@ -1,26 +1,21 @@
 <template>
   <div class="container">
-    <h1>GALLERY</h1>
     <div
     class="gallery"
     v-for="picture in pictures"
-    :key="picture.id"
-    :picture="picture">
-    <img :src="`http://localhost:1337${picture.image.url}`">
+    :key="picture.id">
+      <img :src="require(`@/assets/images/${picture.image}`)">
     </div>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
+import gallery from '@/assets/picturesData.js'
 export default {
   data () {
     return {
-      pictures: null
+      pictures: gallery
     }
-  },
-  async fetch () {
-    this.pictures = await axios.get('http://localhost:1337/galleries').then(response => response.data)
   }
 }
 </script>
@@ -29,8 +24,17 @@ export default {
 h1 {
   text-align: center;
 }
-.gallery img {
+
+.gallery {
+  margin-top: 2rem;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
   width: 95%;
+}
+
+.gallery img {
+  width: 100%;
   padding: 0.2rem 0;
   display: block;
   margin: auto;
