@@ -2,7 +2,7 @@
   <div class="container">
     <div
     v-for="n in data"
-    :key="n"
+    :key="n.id"
     class="wrapper">
     <div class="image-container">
       <img :src="`http://localhost:1337${n.picture.url}`">
@@ -29,9 +29,6 @@ export default {
 </script>
 
 <style scoped>
-
-.container {
-}
 
 .image-container {
   margin-top: 2rem;

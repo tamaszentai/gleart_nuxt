@@ -34,6 +34,7 @@ html, body {
   background-attachment: fixed;
   background-position: 50%;
   margin: 0;
+  font-family: 'Texturina', serif;
 }
 
 .fixed {

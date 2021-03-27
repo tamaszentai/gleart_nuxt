@@ -3,9 +3,9 @@
     <div class="sidedrawer">
       <span class="material-icons" @click="toggleMenu(), $emit('stopScroll')"> close </span>
       <ul @click="toggleMenu(), $emit('stopScroll')">
-        <li><NuxtLink to="/about"><h1>ABOUT</h1></NuxtLink></li>
-        <li><NuxtLink to="/gallery"><h1>GALLERY</h1></NuxtLink></li>
-        <li><NuxtLink to="/contact"><h1>CONTACT</h1></NuxtLink></li>
+        <li><NuxtLink to="/about"><h2>ABOUT</h2></NuxtLink></li>
+        <li><NuxtLink to="/gallery"><h2>GALLERY</h2></NuxtLink></li>
+        <li><NuxtLink to="/contact"><h2>CONTACT</h2></NuxtLink></li>
       </ul>
     </div>
   </div>
