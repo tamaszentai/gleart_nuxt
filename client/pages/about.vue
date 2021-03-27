@@ -48,4 +48,26 @@ export default {
   margin: auto;
 }
 
+/* Extra small devices (phones, 599px and down) */
+@media only screen and (max-width: 599px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 900px and up) */
+@media only screen and (min-width: 900px) {
+  .image-container {
+    display: none;
+  }
+
+  .text-container {
+    margin-top: 10%;
+    margin-left: 40%;
+    width: 50%;
+  }
+}
+
 </style>

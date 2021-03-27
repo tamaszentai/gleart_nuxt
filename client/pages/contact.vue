@@ -44,7 +44,6 @@ export default {
 
 <style scoped>
 label {
-  width: 80%;
   font-size: 2rem;
   height: 5rem;
   display: block;
@@ -96,5 +95,73 @@ input[type=submit] {
   font-family: 'Texturina', serif;
   background-color: whitesmoke;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+/* Extra small devices (phones, 599px and down) */
+@media only screen and (max-width: 599px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 900px and up) */
+@media only screen and (min-width: 900px) {
+  .contact-form {
+    margin-top: 5rem;
+  }
+  label {
+    display: block;
+    padding-left: 25rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  input[type=text] {
+    width: 25rem;
+    margin-left: 50%;
+  }
+  input[type=email] {
+    width: 25rem;
+    margin-left: 50%;
+  }
+  textarea {
+    width: 25rem;
+    margin-left: 50%;
+  }
+  input[type=submit] {
+    width: 25rem;
+    margin-left: 50%;
+  }
+}
+
+/* Large devices (laptops/desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .contact-form {
+    margin-top: 5rem;
+  }
+  label {
+    display: block;
+    padding-left: 25rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  input[type=text] {
+    width: 50rem;
+    margin-left: 40%;
+  }
+  input[type=email] {
+    width: 50rem;
+    margin-left: 40%;
+  }
+  textarea {
+    width: 50rem;
+    margin-left: 40%;
+  }
+  input[type=submit] {
+    width: 50rem;
+    margin-left: 40%;
+  }
 }
 </style>

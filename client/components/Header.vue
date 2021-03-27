@@ -16,6 +16,7 @@
         <li><NuxtLink to="/gallery">GALLERY</NuxtLink></li>
         <li><NuxtLink to="/contact">CONTACT</NuxtLink></li>
       </ul>
+      <div class="end-of-nav"></div>
     </div>
   </div>
 </template>
@@ -56,29 +57,34 @@ h1 {
 }
 
 .nav {
+  position: absolute;
   margin-left: 5rem;
+  display: inline-block;
+  width: 20rem;
+  background-color: rgba(0, 0, 0, .7);
+  height: 38rem;
+}
+.end-of-nav {
   display: inline-block;
   width: 20rem;
   border-bottom-left-radius: 50%;
   border-bottom-right-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.7);
-  height: 40rem;
+  background-color: rgba(0, 0, 0, .7);
+  height: 3rem;
 }
 
 .image-container {
-  width: 14rem;
-  height: 14rem;
+  width: 14.05rem;
+  height: 14.05rem;
   display: block;
   margin: auto;
   margin-top: 3rem;
-  border: 1px solid whitesmoke;
   border-radius: 50%;
   overflow: hidden;
 }
 
 .image-container img {
   width: 100%;
-  height: 100%;
 }
 
 ul {
@@ -94,8 +100,10 @@ li {
 
 a {
   color: whitesmoke;
+  text-decoration: none;
 }
-/* Extra small devices (phones, 600px and down) */
+
+/* Extra small devices (phones, 599px and down) */
 @media only screen and (max-width: 599px) {
   .nav {
     display: none;
@@ -109,27 +117,17 @@ a {
   }
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
+/* Medium devices (landscape tablets, 900px and up) */
 @media only screen and (min-width: 900px) {
    .material-icons {
     display: none;
   }
-.nav {
+  .nav {
     display: inline-block;
   }
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 1200px) {
-   /* .material-icons {
-    display: none;
-  } */
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1800px) {
-   /* .material-icons {
-    display: none;
-  } */
+  .image-container {
+    width: 14.05rem;
+    height: 14.05rem;
+  }
 }
 </style>
