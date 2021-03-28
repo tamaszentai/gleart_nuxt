@@ -60,11 +60,19 @@ export default {
 /* Medium devices (landscape tablets, 900px and up) */
 @media only screen and (min-width: 900px) {
   .image-container {
-    display: none;
+    border-radius: 0;
+    margin-top: 2%;
+    margin-left: 50%;
+    width: 30rem;
+    height: 30rem;
+  }
+
+  .image-container img {
+    border-radius: 50%;
   }
 
   .text-container {
-    margin-top: 10%;
+    margin-top: 2%;
     margin-left: 40%;
     width: 50%;
   }
