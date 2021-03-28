@@ -10,13 +10,7 @@
 export default {}
 </script>
 
-<style>
-.container {
-  display: relative;
-  margin: 0 auto;
-  height: 100vh - 3rem;
-}
-
+<style scoped>
 .logo-container {
   margin-top: 5rem;
 }
