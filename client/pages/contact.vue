@@ -5,7 +5,7 @@
         <v-row style="margin: 0; padding: 0">
           <v-col cols="11" md="4">
             <v-text-field
-              v-model="firstname"
+              v-model="name"
               :rules="nameRules"
               :counter="30"
               label="Name"
@@ -24,22 +24,34 @@
           </v-col>
           <v-col cols="11" md="6">
             <v-textarea
+              v-model="textarea"
               name="message"
               label="Message"
-              hint="Hint text"
             ></v-textarea>
           </v-col>
         </v-row>
            <v-btn
         class="mr-4"
         type="submit"
-        :disabled="invalid"
+        :disabled="validator"
         value="Send"
       >
         send
       </v-btn>
       </v-container>
     </v-form>
+    <i class="fab fa-facebook-f"></i>
+    <i class="fab fa-instagram"></i>
+    <i class="fab fa-tiktok"></i>
+
+            <!-- <a
+                href="https://www.facebook.com/GLeArt-276683485725990"
+                target="_blank"
+                ><v-icon class="black--text" x-large>fab fa-facebook</v-icon></a>
+            <a
+                href="https://www.instagram.com/insomnia_gleart"
+                target="_blank"
+                ><v-icon class="black--text" x-large>fab fa-instagram</v-icon></a> -->
   </section>
 </template>
 
@@ -49,7 +61,7 @@ import emailjs from 'emailjs-com'
 export default {
   data: () => ({
     valid: false,
-    firstname: '',
+    name: '',
     nameRules: [
       v => !!v || 'Name is required',
       v => v.length <= 30 || 'Name must be less than 10 characters'
@@ -58,7 +70,9 @@ export default {
     emailRules: [
       v => !!v || 'E-mail is required',
       v => /.+@.+/.test(v) || 'E-mail must be valid'
-    ]
+    ],
+    textarea: '',
+    invalid: true
   }),
   methods: {
     sendEmail: (e) => {
@@ -82,6 +96,11 @@ export default {
           }
         )
     }
+  },
+  computed: {
+    validator () {
+      return (!this.name || !this.email || !this.textarea)
+    }
   }
 }
 </script>
@@ -97,5 +116,14 @@ export default {
 .mr-4 {
   display: block;
   margin: auto;
+}
+
+.v-application .mr-4 {
+  display: block;
+  margin-left: 40%;
+}
+
+a {
+  text-decoration: none;
 }
 </style>

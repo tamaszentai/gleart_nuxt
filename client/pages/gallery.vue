@@ -7,7 +7,7 @@
     class="gallery-item"
      v-for="picture in pictures"
     :key="picture.id">
-      <img :src="require(`@/assets/images/${picture.image}`)">
+      <img :src="require(`@/static/gallery/${picture.image}`)" alt:picture.alt>
       </div>
     </div>
   </div>
@@ -30,8 +30,7 @@ h1 {
 }
 
 .gallery {
-  margin-top: 2rem;
-  margin-top: 2rem;
+  margin-top: 4rem;
   margin-left: auto;
   margin-right: auto;
   width: 95%;

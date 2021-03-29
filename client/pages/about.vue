@@ -28,7 +28,7 @@ export default {
 <style scoped>
 
 .image-container {
-  margin-top: 2rem;
+  margin-top: 4rem;
   margin-left: auto;
   margin-right: auto;
   width: 15rem;
