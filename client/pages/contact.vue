@@ -1,10 +1,10 @@
 <template>
 <div class="container">
   <v-card class="mx-auto mt-16" style="max-width: 80rem; height: 75vh; border-radius: 0" color="rgba(0, 0, 0, 0)" flat>
-    <v-form class="contact-form" @submit.prevent="sendEmail">
+    <v-form class="contact-form" @submit.prevent="sendEmail" v-model="form">
       <v-text-field
         v-model="name"
-        :rules="nameRules"
+        :rules="[rules.required]"
         style="min-height: 96px"
         label="Name"
         required
@@ -16,7 +16,7 @@
       ></v-text-field>
       <v-text-field
         v-model="email"
-        :rules="emailRules"
+        :rules="[rules.email, rules.required]"
         style="min-height: 96px"
         filled
         color="green"
@@ -28,6 +28,7 @@
       ></v-text-field>
       <v-textarea
         v-model="textarea"
+        :rules="[rules.required]"
         auto-grow
         filled
         color="green"
@@ -38,7 +39,7 @@
         rounded
       ></v-textarea>
             <v-btn
-        :disabled="validator"
+        :disabled="!form"
         class="mx-auto black--text"
         color="whitesmoke"
         type="submit"
@@ -58,19 +59,15 @@
 import emailjs from 'emailjs-com'
 export default {
   data: () => ({
-    valid: false,
-    name: '',
-    nameRules: [
-      v => !!v || 'Name is required',
-      v => v.length <= 30 || 'Name must be less than 10 characters'
-    ],
-    email: '',
-    emailRules: [
-      v => !!v || 'E-mail is required',
-      v => /.+@.+/.test(v) || 'E-mail must be valid'
-    ],
-    textarea: '',
-    invalid: true
+    form: false,
+    name: undefined,
+    email: undefined,
+    textarea: undefined,
+    rules: {
+      email: v => !!(v || '').match(/@/) || 'Please enter a valid email',
+      length: len => v => (v || '').length >= len || `Invalid character length, required ${len}`,
+      required: v => !!v || 'This field is required'
+    }
   }),
   methods: {
     sendEmail: (e) => {
