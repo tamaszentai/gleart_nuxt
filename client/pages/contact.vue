@@ -1,63 +1,61 @@
 <template>
-  <section>
+<div class="container">
+  <v-card class="mx-auto mt-16" style="max-width: 80rem; height: 75vh; border-radius: 0" color="rgba(0, 0, 0, 0)" flat>
     <v-form class="contact-form" @submit.prevent="sendEmail">
-      <v-container>
-        <v-row style="margin: 0; padding: 0">
-          <v-col cols="11" md="4">
-            <v-text-field
-              v-model="name"
-              :rules="nameRules"
-              :counter="30"
-              label="Name"
-              required
-              name="user_name"
-            ></v-text-field>
-          </v-col>
-             <v-col cols="11" md="4">
-                <v-text-field
-            v-model="email"
-            :rules="emailRules"
-            label="E-mail"
-            required
-            name="user_email"
-          ></v-text-field>
-          </v-col>
-          <v-col cols="11" md="6">
-            <v-textarea
-              v-model="textarea"
-              name="message"
-              label="Message"
-            ></v-textarea>
-          </v-col>
-        </v-row>
-           <v-btn
-        class="mr-4"
-        type="submit"
+      <v-text-field
+        v-model="name"
+        :rules="nameRules"
+        style="min-height: 96px"
+        label="Name"
+        required
+        filled
+        color="green"
+        name="user_name"
+        background-color="rgba(255, 255, 255, .7)"
+        rounded
+      ></v-text-field>
+      <v-text-field
+        v-model="email"
+        :rules="emailRules"
+        style="min-height: 96px"
+        filled
+        color="green"
+        label="Email address"
+        type="email"
+        name="user_email"
+        background-color="rgba(255, 255, 255, .7)"
+        rounded
+      ></v-text-field>
+      <v-textarea
+        v-model="textarea"
+        auto-grow
+        filled
+        color="green"
+        label="Message"
+        rows="4"
+        name="message"
+        background-color="rgba(255, 255, 255, .7)"
+        rounded
+      ></v-textarea>
+            <v-btn
         :disabled="validator"
+        class="mx-auto black--text"
+        color="whitesmoke"
+        type="submit"
+        rounded
+        depressed
+        block
         value="Send"
       >
-        send
+        SEND
       </v-btn>
-      </v-container>
     </v-form>
-    <i class="fab fa-facebook-f"></i>
-    <i class="fab fa-instagram"></i>
-    <i class="fab fa-tiktok"></i>
-
-            <!-- <a
-                href="https://www.facebook.com/GLeArt-276683485725990"
-                target="_blank"
-                ><v-icon class="black--text" x-large>fab fa-facebook</v-icon></a>
-            <a
-                href="https://www.instagram.com/insomnia_gleart"
-                target="_blank"
-                ><v-icon class="black--text" x-large>fab fa-instagram</v-icon></a> -->
-  </section>
+  </v-card>
+  </div>
 </template>
 
 <script>
 import emailjs from 'emailjs-com'
-
 export default {
   data: () => ({
     valid: false,
@@ -104,26 +102,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.contact-form {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5rem;
-}
-
-.mr-4 {
-  display: block;
-  margin: auto;
-}
-
-.v-application .mr-4 {
-  display: block;
-  margin-left: 40%;
-}
-
-a {
-  text-decoration: none;
-}
-</style>

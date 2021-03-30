@@ -5,7 +5,6 @@
     app
     sticky
     dark
-    hide-on-scroll
     style="border-radius: 0">
       <v-app-bar-nav-icon @click="drawer = true" absolute></v-app-bar-nav-icon>
         <img class="logo" src="~assets/glealogo.png">
@@ -16,12 +15,20 @@
     dark
     v-model="drawer"
     height=100vh>
-      <ul>
         <v-list-item><NuxtLink to="/about">About</NuxtLink></v-list-item>
         <v-list-item><NuxtLink to="/gallery">Gallery</NuxtLink></v-list-item>
         <v-list-item><NuxtLink to="/contact">Contact</NuxtLink></v-list-item>
+        <div class="social-container">
+          <a
+                href="https://www.facebook.com/GLeArt-276683485725990"
+                target="_blank"
+                ><v-icon x-large color="white" class="mx-10">fab fa-facebook</v-icon></a>
+                 <a
+                href="https://www.instagram.com/insomnia_gleart"
+                target="_blank"
+                ><v-icon x-large color="white" class="mx-10">fab fa-instagram</v-icon></a>
+        </div>
         <img class="drawer-logo" src="~assets/glealogo.png">
-      </ul>
     </v-navigation-drawer>
 </v-container>
 </template>
@@ -49,7 +56,6 @@ export default {
 
 <style scoped>
 a  {
-  color: whitesmoke;
   font-size: 1.5rem;
   text-decoration: none;
 }
@@ -71,13 +77,13 @@ a.nuxt-link-active {
 
 .drawer-logo {
   display: block;
-  margin-top: 2rem;
+  margin-top: 4rem;
   margin-left: auto;
   margin-right: auto;
 }
 
-.v-application ul {
-  padding: 0;
+.v-application a {
+  color: whitesmoke;
 }
 
 .v-list-item {
@@ -85,6 +91,12 @@ a.nuxt-link-active {
   text-align: center;
   display: block;
 }
+
+.social-container {
+  margin-top: 4rem;
+  text-align: center;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {}
 /* Small devices (portrait tablets and large phones, 600px and up) */
