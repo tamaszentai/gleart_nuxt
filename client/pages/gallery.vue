@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <div
     class="gallery"
    >
@@ -7,7 +7,7 @@
     class="gallery-item"
      v-for="picture in pictures"
     :key="picture.id">
-      <img :src="require(`@/static/gallery/${picture.image}`)" alt:picture.alt>
+      <b-img-lazy :src="require(`@/static/gallery/${picture.image}`)" blank-src="null" alt:picture.alt></b-img-lazy>
       </div>
     </div>
   </div>
@@ -30,7 +30,7 @@ h1 {
 }
 
 .gallery {
-  margin-top: 4rem;
+  margin-top: 6rem;
   margin-left: auto;
   margin-right: auto;
   width: 95%;
@@ -48,40 +48,38 @@ h1 {
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {}
 
-/* Medium devices (landscape tablets, 900px and up) */
-@media only screen and (min-width: 900px) {
-     .gallery {
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
     grid-gap: 1rem;
-    max-width: 60%;
-    margin-left: 33%;
+    max-width: 100%;
+    margin-top: 8rem;
+
   }
 
   .gallery img {
     display:block;
-    margin:auto;
     width: 100%;
-    height: 15rem;
+    height: 20rem;
     object-fit: cover;
   }
 }
 
 /* Large devices (laptops/desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-    .gallery {
+  .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
     grid-gap: 1rem;
-    max-width: 60%;
-    margin-left: 30%;
+    max-width: 100%;
   }
 
   .gallery img {
     display:block;
-    margin:auto;
     width: 100%;
-    height: 15rem;
+    height: 25rem;
     object-fit: cover;
   }
 }

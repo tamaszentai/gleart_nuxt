@@ -1,15 +1,13 @@
 <template>
-<v-app>
   <div class="app-container">
-    <Appbar class="d-md-and-down"/>
+    <Navigation />
     <Nuxt />
   </div>
-  </v-app>
 </template>
 
 <style>
-#app {
-  background-image: url("~assets/background.jpg");
+html, body {
+  background-image: url("~static/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -17,15 +15,6 @@
   margin: 0;
   font-family: 'Texturina', serif;
   min-height: 100%;
-}
-
-.container {
-  display: block;
-  margin: auto;
-  padding: auto;
-}
-
-.fixed {
-  overflow: hidden;
+  padding: 0;
 }
 </style>
