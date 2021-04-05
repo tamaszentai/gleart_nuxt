@@ -5,20 +5,24 @@
    >
     <div
     class="gallery-item"
-     v-for="picture in pictures"
-    :key="picture.id">
-      <b-img-lazy :src="require(`@/static/gallery/${picture.image}`)" blank-src="null" alt:picture.alt></b-img-lazy>
+     v-for="data in gallery"
+    :key="data.id">
+      <b-img-lazy :src="data.picture.url" :alt="data.alt"></b-img-lazy>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import gallery from '@/assets/picturesData.js'
+import axios from 'axios'
 export default {
+  async fetch () {
+    const response = await axios.get('https://gleart.ew.r.appspot.com/galleries')
+    this.gallery = response.data
+  },
   data () {
     return {
-      pictures: gallery
+      gallery: []
     }
   }
 }
