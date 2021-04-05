@@ -1,5 +1,7 @@
 <template>
-  <div class="about">
+  <div
+  v-if="about !== []"
+  class="about">
     <div
     v-for="data in about"
     :key="data.id"
