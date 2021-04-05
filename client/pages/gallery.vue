@@ -41,14 +41,6 @@ export default {
       index: null
     }
   }
-  // computed: {
-  //   filtering () {
-  //     return this.gallery.map((data) => {
-  //       this.filteredImages.push(data.picture.url)
-  //       return this.filteredImages
-  //     })
-  //   }
-  // }
 }
 </script>
 

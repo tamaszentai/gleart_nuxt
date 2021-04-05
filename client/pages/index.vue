@@ -28,17 +28,33 @@ export default {}
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   .logo-container img {
-  display: block;
-  width: 35%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0rem;
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0rem;
 }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 992px) {
+  .logo-container img {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0rem;
+}
+}
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {}
+@media only screen and (min-width: 1200px) {
+  .logo-container img {
+    display: block;
+    width: 35%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0rem;
+}
+}
 
 </style>
