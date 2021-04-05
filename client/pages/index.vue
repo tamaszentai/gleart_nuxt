@@ -32,7 +32,7 @@ export default {}
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 0rem;
+    margin-top: 5rem;
 }
 }
 
@@ -43,17 +43,17 @@ export default {}
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 0rem;
+    margin-top: 5rem;
 }
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
   .logo-container img {
     display: block;
-    width: 35%;
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 0rem;
+    margin-top: 5rem;
 }
 }
 
