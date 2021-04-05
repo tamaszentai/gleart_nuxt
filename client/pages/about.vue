@@ -1,15 +1,15 @@
 <template>
   <div class="about">
     <div
-    v-for="n in about"
-    :key="n.id"
+    v-for="data in about"
+    :key="data.id"
     class="wrapper">
     <div class="image-container">
-      <b-img-lazy :src="require(`@/static/${n.image}`)"></b-img-lazy>
+      <b-img-lazy :src="data.avatar.url"></b-img-lazy>
     </div>
     <div class="text-container">
       <h2><i><b>Hello and welcome!</b></i></h2>
-      <i>{{n.bio}}</i>
+      <i>{{data.biography}}</i>
       <hr />
     </div>
     </div>
@@ -17,11 +17,16 @@
 </template>
 
 <script>
-import about from '@/assets/about.js'
+// import about from '@/assets/about.js'
+import axios from 'axios'
 export default {
+  async fetch () {
+    const response = await axios.get('https://gleart.ew.r.appspot.com/abouts')
+    this.about = response.data
+  },
   data () {
     return {
-      about
+      about: []
     }
   }
 }
