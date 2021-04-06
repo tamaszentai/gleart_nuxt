@@ -6,7 +6,7 @@
    >
     <div
     class="gallery-item"
-     v-for="(image, imageIndex) in imagesUrl"
+     v-for="(image, imageIndex) in imagesThumbnail"
     :key="imageIndex"
     @click="index = imageIndex"
         >
@@ -28,17 +28,14 @@ export default {
     const response = await axios.get('https://gleart.ew.r.appspot.com/galleries')
     response.data.map((data) => {
       this.imagesUrl.push(data.picture.url)
-      return data
-    })
-    response.data.map((data) => {
       this.imagesAlt.push(data.alt)
+      this.imagesThumbnail.push(data.picture.formats.small.url)
       return data
     })
-    this.gallery = response.data
   },
   data () {
     return {
-      gallery: [],
+      imagesThumbnail: [],
       imagesUrl: [],
       imagesAlt: [],
       index: null
