@@ -104,6 +104,19 @@ export default {
   background: black;
 }
 
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(73, 71, 71);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: rgb(73, 71, 71);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: rgb(73, 71, 71);
+}
+
 /* Extra small devices (phones, 576px and down) */
 @media only screen and (max-width: 576px) {}
 
