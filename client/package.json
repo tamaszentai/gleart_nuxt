@@ -12,6 +12,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@djanoskova/vue-image-blur": "^0.2.7",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/vue-fontawesome": "^2.0.2",
     "@nuxtjs/axios": "^5.12.5",

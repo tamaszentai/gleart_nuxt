@@ -10,19 +10,27 @@
     :key="imageIndex"
     @click="index = imageIndex"
         >
-      <b-img :src="image" :alt="imagesAlt[imageIndex]"></b-img>
+      <!-- <b-img :src="image" :alt="imagesAlt[imageIndex]"></b-img> -->
+      <ImageBlur
+      :image="image"
+      :thumb="image"
+      :alt="imagesAlt[imageIndex]"
+      />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { ImageBlur } from '@djanoskova/vue-image-blur'
+import '@djanoskova/vue-image-blur/public/css/imageBlur.css'
 import axios from 'axios'
 import CoolLightBox from 'vue-cool-lightbox'
 import 'vue-cool-lightbox/dist/vue-cool-lightbox.min.css'
 export default {
   components: {
-    CoolLightBox
+    CoolLightBox,
+    ImageBlur
   },
   async fetch () {
     const response = await axios.get('https://gleart.ew.r.appspot.com/galleries')
@@ -48,6 +56,13 @@ export default {
 h1 {
   text-align: center;
 }
+.image-blur {
+  display: block;
+  margin: auto;
+  margin-top: 1rem;
+  width: 100%;
+  height: 30rem;
+}
 
 .gallery {
   margin-top: 6rem;
@@ -55,13 +70,6 @@ h1 {
   margin-right: auto;
   width: 95%;
 }
-
-.gallery img {
-  width: 100%;
-  padding: 0.2rem 0;
-  margin: auto;
-  }
-
   /* Extra small devices (phones, 599px and down) */
 @media only screen and (max-width: 599px) {}
 
@@ -78,13 +86,6 @@ h1 {
     margin-top: 8rem;
 
   }
-
-  .gallery img {
-    display:block;
-    width: 100%;
-    height: 20rem;
-    object-fit: cover;
-  }
 }
 
 /* Large devices (laptops/desktops, 1200px and up) */
@@ -97,13 +98,6 @@ h1 {
     grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
     grid-gap: 1rem;
     max-width: 100%;
-  }
-
-  .gallery img {
-    display:block;
-    width: 100%;
-    height: 25rem;
-    object-fit: cover;
   }
 }
 </style>
