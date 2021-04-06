@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="index">
     <div class="logo-container">
       <b-img-lazy src="~static/logo.png"></b-img-lazy>
     </div>
@@ -40,7 +40,7 @@ export default {}
 @media only screen and (min-width: 992px) {
   .logo-container img {
     display: block;
-    width: 100%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 5rem;
