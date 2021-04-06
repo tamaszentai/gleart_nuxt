@@ -1,18 +1,16 @@
 <template>
   <div>
-        <CoolLightBox :items="filteredImages" :index="index" @close="index = null"/>
+        <CoolLightBox :items="imagesUrl" :index="index" @close="index = null"/>
     <div
     class="gallery"
-    v-for="data in gallery"
-    :key="data.id"
    >
     <div
     class="gallery-item"
-     v-for="(image, imageIndex) in filteredImages"
+     v-for="(image, imageIndex) in imagesUrl"
     :key="imageIndex"
     @click="index = imageIndex"
         >
-      <b-img :src="image" :alt="data.alt"></b-img>
+      <b-img :src="image" :alt="imagesAlt[imageIndex]"></b-img>
       </div>
     </div>
   </div>
@@ -29,7 +27,11 @@ export default {
   async fetch () {
     const response = await axios.get('https://gleart.ew.r.appspot.com/galleries')
     response.data.map((data) => {
-      this.filteredImages.push(data.picture.url)
+      this.imagesUrl.push(data.picture.url)
+      return data
+    })
+    response.data.map((data) => {
+      this.imagesAlt.push(data.alt)
       return data
     })
     this.gallery = response.data
@@ -37,7 +39,8 @@ export default {
   data () {
     return {
       gallery: [],
-      filteredImages: [],
+      imagesUrl: [],
+      imagesAlt: [],
       index: null
     }
   }
