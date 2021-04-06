@@ -49,7 +49,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     'nuxt-material-design-icons',
-    'bootstrap-vue/nuxt',
+    'bootstrap-vue/nuxt'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

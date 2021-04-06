@@ -11,7 +11,7 @@
     @click="index = imageIndex"
         >
       <ImageBlur
-      :image="image"
+      :image="imagesSmall[imageIndex]"
       :thumb="image"
       :alt="imagesAlt[imageIndex]"
       />
@@ -36,12 +36,14 @@ export default {
     response.data.map((data) => {
       this.imagesUrl.push(data.picture.url)
       this.imagesAlt.push(data.alt)
-      this.imagesThumbnail.push(data.picture.formats.small.url)
+      this.imagesThumbnail.push(data.picture.formats.thumbnail.url)
+      this.imagesSmall.push(data.picture.formats.small.url)
       return data
     })
   },
   data () {
     return {
+      imagesSmall: [],
       imagesThumbnail: [],
       imagesUrl: [],
       imagesAlt: [],
