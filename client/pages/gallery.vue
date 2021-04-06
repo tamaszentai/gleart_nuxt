@@ -10,7 +10,6 @@
     :key="imageIndex"
     @click="index = imageIndex"
         >
-      <!-- <b-img :src="image" :alt="imagesAlt[imageIndex]"></b-img> -->
       <ImageBlur
       :image="image"
       :thumb="image"
