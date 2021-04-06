@@ -50,7 +50,7 @@ export default {}
 @media only screen and (min-width: 1200px) {
   .logo-container img {
     display: block;
-    width: 50%;
+    width: 30%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 5rem;
