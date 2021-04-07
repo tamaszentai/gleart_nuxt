@@ -3,11 +3,30 @@
     <div class="logo-container">
       <b-img-lazy src="~static/logo.png"></b-img-lazy>
     </div>
+    <div
+    class="d-none preload"
+    v-for="(data, dataIndex) in imagesSmall"
+    :key="dataIndex">
+    <img :src="data">
+    </div>
   </div>
 </template>
 
 <script>
-export default {}
+import axios from 'axios'
+export default {
+  async fetch () {
+    const response = await axios.get('https://gleart.ew.r.appspot.com/galleries')
+    response.data.map((data) => {
+      return this.imagesSmall.push(data.picture.formats.small.url)
+    })
+  },
+  data () {
+    return {
+      imagesSmall: []
+    }
+  }
+}
 </script>
 
 <style scoped>

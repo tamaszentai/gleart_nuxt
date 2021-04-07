@@ -10,8 +10,7 @@
     :key="imageIndex"
     @click="index = imageIndex"
         >
-      <img class="blurry" v-if="imagesSmall === []" :src="image" :alt="imagesAlt[imageIndex]">
-      <img v-else :src="imagesSmall[imageIndex]" :alt="imagesAlt[imageIndex]">
+      <nuxt-img :src="imagesSmall[imageIndex]" :alt="imagesAlt[imageIndex]" />
       </div>
     </div>
   </div>
