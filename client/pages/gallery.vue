@@ -10,7 +10,7 @@
     :key="imageIndex"
     @click="index = imageIndex"
         >
-      <nuxt-img :src="imagesSmall[imageIndex]" :alt="imagesAlt[imageIndex]" />
+      <img :src="imagesSmall[imageIndex]" :alt="imagesAlt[imageIndex]" />
       </div>
     </div>
   </div>
@@ -64,6 +64,7 @@ h1 {
   width: 100%;
   height: 25rem;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .blurry {

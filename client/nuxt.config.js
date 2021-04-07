@@ -34,8 +34,7 @@ export default {
     '@nuxtjs/eslint-module',
     '@nuxtjs/dotenv',
     '@nuxtjs/vuetify',
-    '@nuxtjs/fontawesome',
-    '@nuxt/image'
+    '@nuxtjs/fontawesome'
   ],
 
   fontawesome: {
