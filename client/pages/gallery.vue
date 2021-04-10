@@ -1,8 +1,13 @@
 <template>
   <div>
         <CoolLightBox :items="imagesUrl" :index="index" @close="index = null"/>
+        <div class="loading" v-if="$fetchState.pending">
+          <LoadingSpinner class="spinner"/>
+          <p>Getting those cool pictures, please wait...</p>
+        </div>
     <div
     class="gallery"
+     v-else
    >
     <div
     class="gallery-item"
@@ -48,6 +53,10 @@ export default {
 
 <style scoped>
 h1 {
+  text-align: center;
+}
+
+.loading {
   text-align: center;
 }
 

@@ -1,6 +1,11 @@
 <template>
+<div>
+  <div class="loading" v-if="$fetchState.pending">
+          <LoadingSpinner class="spinner"/>
+          <p>Getting the information, please wait...</p>
+  </div>
   <div
-  v-if="about !== []"
+  v-else
   class="about">
     <div
     v-for="data in about"
@@ -16,6 +21,7 @@
     </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -35,6 +41,9 @@ export default {
 </script>
 
 <style scoped>
+.loading {
+  text-align: center;
+}
 .image-container {
   margin-top: 4rem;
   margin-left: auto;
